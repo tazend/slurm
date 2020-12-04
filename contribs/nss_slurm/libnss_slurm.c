@@ -164,6 +164,8 @@ static int _internal_getpw(int mode, uid_t uid, const char *name,
 	int len_name, len_passwd, len_gecos, len_dir, len_shell;
 	struct passwd *rpc_result = NULL;
 
+	slurm_conf_init(NULL);
+
 	if (!(rpc_result = _pw_internal(mode, uid, name)))
 		return NSS_STATUS_NOTFOUND;
 
